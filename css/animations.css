@@ -1,0 +1,260 @@
+/* Базовые анимации */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.88);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.88);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: var(--shadow-soft);
+    }
+    50% {
+        box-shadow: var(--shadow-glow);
+    }
+}
+
+@keyframes shrinkAway {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes burst {
+    0% {
+        opacity: 1;
+        transform: scale(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5) rotate(180deg);
+    }
+}
+
+@keyframes particle {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0);
+    }
+}
+
+/* Утилиты анимаций */
+
+.animate-fade-in {
+    animation: fadeIn var(--motion-normal) var(--ease-soft) forwards;
+}
+
+.animate-fade-out {
+    animation: fadeOut var(--motion-normal) var(--ease-soft) forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp var(--motion-normal) var(--ease-soft) forwards;
+}
+
+.animate-slide-down {
+    animation: slideDown var(--motion-normal) var(--ease-soft) forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn var(--motion-normal) var(--ease-bounce) forwards;
+}
+
+.animate-scale-out {
+    animation: scaleOut var(--motion-normal) var(--ease-soft) forwards;
+}
+
+.animate-bounce {
+    animation: bounce var(--motion-slow) var(--ease-bounce);
+}
+
+.animate-float {
+    animation: float 3s var(--ease-smooth) infinite;
+}
+
+.animate-sway {
+    animation: sway 4s var(--ease-smooth) infinite;
+}
+
+.animate-pop {
+    animation: pop var(--motion-normal) var(--ease-bounce);
+}
+
+.animate-glow {
+    animation: glow 2s var(--ease-smooth) infinite;
+}
+
+.animate-shrink-away {
+    animation: shrinkAway var(--motion-normal) var(--ease-soft) forwards;
+}
+
+/* Задержки анимаций */
+
+.delay-1 { animation-delay: 0ms; }
+.delay-2 { animation-delay: 100ms; }
+.delay-3 { animation-delay: 200ms; }
+.delay-4 { animation-delay: 300ms; }
+.delay-5 { animation-delay: 400ms; }
+
+/* Частицы */
+
+.particle {
+    position: fixed;
+    pointer-events: none;
+    animation: particle var(--motion-slow) var(--ease-soft) forwards;
+    z-index: 9999;
+}
+
+.particle-heart {
+    color: var(--color-pink);
+    text-shadow: 0 0 10px rgba(217, 144, 166, 0.5);
+}
+
+.particle-star {
+    color: var(--color-lavender);
+    text-shadow: 0 0 10px rgba(199, 184, 223, 0.5);
+}
+
+.particle-flower {
+    color: var(--color-sage);
+    text-shadow: 0 0 10px rgba(184, 200, 169, 0.5);
+}
+
+.flying-heart {
+    z-index: 10000;
+}
+
+/* Переходы экранов */
+
+.screen-enter {
+    animation: fadeIn var(--motion-slow) var(--ease-soft) forwards;
+}
+
+.screen-exit {
+    animation: fadeOut var(--motion-normal) var(--ease-soft) forwards;
+}
+
+@keyframes ringExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/* Снижение движения для доступности */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .animate-float,
+    .animate-sway,
+    .animate-glow {
+        animation: none;
+    }
+}

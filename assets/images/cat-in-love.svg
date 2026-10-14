@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320">
+  <defs>
+    <!-- Градиент для мягкого объёма -->
+    <radialGradient id="bodyGradient" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#F8E6D3"/>
+      <stop offset="100%" stop-color="#E8D6C3"/>
+    </radialGradient>
+    
+    <radialGradient id="earGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#F8E6D3"/>
+      <stop offset="100%" stop-color="#E0CEBB"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Хвост -->
+  <g id="tail">
+    <path d="M220 240 Q260 220 280 200 Q290 190 285 180 Q280 190 270 200 Q250 220 220 240"
+          fill="url(#bodyGradient)" stroke="#D9C4B0" stroke-width="2"/>
+  </g>
+
+  <!-- Тело -->
+  <g id="body">
+    <ellipse cx="160" cy="260" rx="60" ry="45" fill="url(#bodyGradient)"/>
+  </g>
+
+  <!-- Уши -->
+  <g id="ears">
+    <!-- Левое ухо -->
+    <path d="M95 130 Q80 80 110 60 Q130 75 125 115 Z" fill="url(#earGradient)" stroke="#D9C4B0" stroke-width="2"/>
+    <path d="M100 120 Q90 90 110 75 Q120 85 118 110 Z" fill="#F8E0D8"/>
+    
+    <!-- Правое ухо -->
+    <path d="M225 130 Q240 80 210 60 Q190 75 195 115 Z" fill="url(#earGradient)" stroke="#D9C4B0" stroke-width="2"/>
+    <path d="M220 120 Q230 90 210 75 Q200 85 202 110 Z" fill="#F8E0D8"/>
+  </g>
+
+  <!-- Голова -->
+  <g id="head">
+    <ellipse cx="160" cy="175" rx="70" ry="65" fill="url(#bodyGradient)" stroke="#D9C4B0" stroke-width="2"/>
+  </g>
+
+  <!-- Морда -->
+  <g id="face">
+    <!-- Румянец -->
+    <g id="blush">
+      <ellipse cx="115" cy="185" rx="18" ry="12" fill="#F5C8CC" opacity="0.6"/>
+      <ellipse cx="205" cy="185" rx="18" ry="12" fill="#F5C8CC" opacity="0.6"/>
+    </g>
+    
+    <!-- Нос -->
+    <ellipse cx="160" cy="190" rx="8" ry="6" fill="#F5A8B0"/>
+    
+    <!-- Рот (улыбка) -->
+    <path d="M145 200 Q160 215 175 200" fill="none" stroke="#D9A0A8" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Усы -->
+    <g id="whiskers" stroke="#514442" stroke-width="1.5" stroke-linecap="round">
+      <!-- Левые усы -->
+      <line x1="90" y1="185" x2="60" y2="180"/>
+      <line x1="90" y1="190" x2="55" y2="190"/>
+      <line x1="90" y1="195" x2="60" y2="200"/>
+      
+      <!-- Правые усы -->
+      <line x1="230" y1="185" x2="260" y2="180"/>
+      <line x1="230" y1="190" x2="265" y2="190"/>
+      <line x1="230" y1="195" x2="260" y2="200"/>
+    </g>
+  </g>
+
+  <!-- Глаза с влюблёнными бликами -->
+  <g id="eyes">
+    <!-- Левый глаз -->
+    <g id="left-eye">
+      <!-- Форма глаза -->
+      <ellipse cx="130" cy="160" rx="18" ry="20" fill="#FFFFFF" stroke="#D9C4B0" stroke-width="1.5"/>
+      
+      <!-- Радужка -->
+      <ellipse cx="130" cy="162" rx="12" ry="14" fill="#8B7355"/>
+      
+      <!-- Зрачок -->
+      <circle cx="130" cy="163" r="6" fill="#2C2420"/>
+      
+      <!-- Большой белый блик -->
+      <ellipse cx="124" cy="155" rx="5" ry="4" fill="#FFFFFF" opacity="0.9"/>
+      
+      <!-- Маленький дополнительный блик -->
+      <circle cx="134" cy="167" r="2" fill="#FFFFFF" opacity="0.7"/>
+      
+      <!-- Сердцевидный блик (влюблённый) -->
+      <path d="M130 168 C128 165 126 163 127 162 C125 160 128 158 130 158 C132 158 135 160 133 162 C134 163 132 165 130 168 Z"
+            fill="#F5A8B0" opacity="0.5"/>
+    </g>
+    
+    <!-- Правый глаз -->
+    <g id="right-eye">
+      <!-- Форма глаза -->
+      <ellipse cx="190" cy="160" rx="18" ry="20" fill="#FFFFFF" stroke="#D9C4B0" stroke-width="1.5"/>
+      
+      <!-- Радужка -->
+      <ellipse cx="190" cy="162" rx="12" ry="14" fill="#8B7355"/>
+      
+      <!-- Зрачок -->
+      <circle cx="190" cy="163" r="6" fill="#2C2420"/>
+      
+      <!-- Большой белый блик -->
+      <ellipse cx="184" cy="155" rx="5" ry="4" fill="#FFFFFF" opacity="0.9"/>
+      
+      <!-- Маленький дополнительный блик -->
+      <circle cx="194" cy="167" r="2" fill="#FFFFFF" opacity="0.7"/>
+      
+      <!-- Сердцевидный блик (влюблённый) -->
+      <path d="M190 168 C188 165 186 163 187 162 C185 160 188 158 190 158 C192 158 195 160 193 162 C194 163 192 165 190 168 Z"
+            fill="#F5A8B0" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Лапки -->
+  <g id="paws">
+    <!-- Левая лапка -->
+    <ellipse cx="130" cy="290" rx="15" ry="10" fill="url(#bodyGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    
+    <!-- Правая лапка -->
+    <ellipse cx="190" cy="290" rx="15" ry="10" fill="url(#bodyGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+  </g>
+
+  <!-- Бантик -->
+  <g id="bow">
+    <!-- Левая часть банта -->
+    <ellipse cx="160" cy="115" rx="18" ry="12" fill="#F5A8B0" transform="rotate(-30 160 115)"/>
+    
+    <!-- Правая часть банта -->
+    <ellipse cx="160" cy="115" rx="18" ry="12" fill="#F5A8B0" transform="rotate(30 160 115)"/>
+    
+    <!-- Центр банта -->
+    <circle cx="160" cy="115" r="8" fill="#E898A8"/>
+    
+    <!-- Узел банта -->
+    <circle cx="160" cy="115" r="4" fill="#D88898"/>
+  </g>
+
+  <!-- Маленькие сердечки (декор) -->
+  <g id="hearts" opacity="0.6">
+    <path d="M50 80 C45 75 42 70 45 65 C48 60 52 58 55 60 C58 58 62 60 65 65 C68 70 65 75 60 80 C55 85 50 80 50 80 Z"
+          fill="#F5A8B0" transform="scale(0.6)"/>
+    <path d="M270 80 C265 75 262 70 265 65 C268 60 272 58 275 60 C278 58 282 60 285 65 C288 70 285 75 280 80 C275 85 270 80 270 80 Z"
+          fill="#F5A8B0" transform="scale(0.5)"/>
+  </g>
+</svg>

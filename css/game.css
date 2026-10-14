@@ -1,0 +1,1139 @@
+/* Экран 1: Старт */
+
+.screen-intro {
+    background: var(--color-bg);
+}
+
+.cat-container {
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
+
+.cat-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s var(--ease-soft);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cat-base {
+    opacity: 1;
+}
+
+.cat-hover {
+    opacity: 0;
+}
+
+.cat-interactive {
+    cursor: pointer;
+}
+
+.cat-container:hover .cat-hover {
+    opacity: 1;
+}
+
+.cat-container:hover .cat-base {
+    opacity: 0;
+}
+
+
+.title-main {
+    animation: slideUp var(--motion-normal) var(--ease-soft) 0.3s forwards;
+    opacity: 0;
+}
+
+.cat-speech {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    max-width: 300px;
+    margin: var(--spacing-md) auto;
+    position: relative;
+    animation: slideUp var(--motion-normal) var(--ease-soft) 0.5s forwards;
+    opacity: 0;
+}
+
+.cat-speech::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: var(--color-white) transparent transparent;
+}
+
+#btn-start {
+    animation: slideUp var(--motion-normal) var(--ease-soft) 0.7s forwards;
+    opacity: 0;
+}
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg) scale(1.1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-10px) rotate(-5deg) scale(1);
+        opacity: 0.4;
+    }
+    75% {
+        transform: translateY(-25px) rotate(3deg) scale(1.05);
+        opacity: 0.5;
+    }
+}
+
+
+
+/* Экран 2: Сбор сердечек */
+
+.screen-hearts {
+    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-powder) 50%, var(--color-lavender) 100%);
+}
+
+.hearts-scene {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    flex-wrap: wrap;
+}
+
+.heart {
+    width: 80px;
+    height: 80px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    transition: transform var(--motion-fast) var(--ease-soft);
+}
+
+.heart:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.heart:focus-visible {
+    outline: 3px solid var(--color-pink);
+    outline-offset: 4px;
+}
+
+.heart-icon {
+    width: 100%;
+    height: 100%;
+    fill: var(--color-pink);
+    filter: drop-shadow(0 4px 8px rgba(217, 144, 166, 0.4));
+    transition: fill var(--motion-fast) var(--ease-soft), filter var(--motion-fast) var(--ease-soft);
+}
+
+.heart:hover .heart-icon {
+    filter: drop-shadow(0 6px 12px rgba(217, 144, 166, 0.6));
+}
+
+.heart.collected .heart-icon {
+    fill: var(--color-powder);
+    opacity: 0.3;
+    filter: none;
+}
+
+.heart-1 {
+    animation: float 3s var(--ease-smooth) infinite;
+}
+
+.heart-2 {
+    animation: float 3.5s var(--ease-smooth) infinite;
+    animation-delay: 0.5s;
+}
+
+.heart-3 {
+    animation: float 4s var(--ease-smooth) infinite;
+    animation-delay: 1s;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+    font-size: var(--font-size-lg);
+}
+
+.progress-value {
+    font-weight: bold;
+    color: var(--color-pink);
+}
+
+.message-box {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    max-width: 350px;
+    text-align: center;
+    margin: var(--spacing-md) 0;
+    animation: scaleIn var(--motion-normal) var(--ease-bounce) forwards;
+}
+
+.completion-section {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    animation: slideUp var(--motion-normal) var(--ease-soft) forwards;
+}
+
+.completion-text {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+    margin: var(--spacing-md) 0;
+}
+
+/* Экран 3: Подарки */
+
+.screen-gifts {
+    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-sage) 100%);
+}
+
+.scene-title {
+    margin-bottom: var(--spacing-xl);
+}
+
+.gifts-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+    flex-wrap: wrap;
+}
+
+.gift-box {
+    width: 140px;
+    text-align: center;
+    position: relative;
+}
+
+.gift-container {
+    width: 100%;
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    transition: transform var(--motion-fast) var(--ease-soft);
+}
+
+.gift-container:hover {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+.gift-container:focus-visible {
+    outline: 3px solid var(--color-pink);
+    outline-offset: 4px;
+}
+
+.gift-svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    transition: filter var(--motion-fast) var(--ease-soft);
+}
+
+.gift-container:hover .gift-svg {
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+}
+
+.gift-box.opened .gift-container {
+    opacity: 0.5;
+    pointer-events: none;
+    transform: scale(0.95);
+}
+
+.gift-message {
+    background: var(--color-white);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-sm);
+    animation: scaleIn var(--motion-normal) var(--ease-bounce) forwards;
+}
+
+/* Пасхалка */
+
+.easter-egg-trigger {
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: var(--z-elevated);
+    transition: transform var(--motion-fast) var(--ease-soft);
+    opacity: 0.7;
+}
+
+.easter-egg-trigger:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.easter-egg-trigger:focus-visible {
+    outline: 3px solid var(--color-pink);
+    outline-offset: 4px;
+}
+
+.paw-icon {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(81, 68, 66, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    padding: var(--spacing-md);
+    animation: fadeIn var(--motion-normal) var(--ease-soft) forwards;
+}
+
+.modal-content {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: var(--shadow-medium);
+    animation: scaleIn var(--motion-normal) var(--ease-bounce) forwards;
+}
+
+/* Планер Санкт-Петербурга */
+
+.modal-content-petersburg {
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: var(--spacing-xl);
+}
+
+.petersburg-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.petersburg-tab {
+    background: var(--color-white);
+    border: 2px solid var(--color-powder);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--motion-fast) var(--ease-soft);
+}
+
+.petersburg-tab:hover {
+    border-color: var(--color-pink);
+    transform: translateY(-2px);
+}
+
+.petersburg-tab.active {
+    background: var(--color-pink);
+    border-color: var(--color-pink);
+    color: var(--color-white);
+}
+
+.petersburg-tab:focus-visible {
+    outline: 3px solid var(--color-pink);
+    outline-offset: 2px;
+}
+
+.petersburg-tab-content {
+    display: none;
+    animation: fadeIn var(--motion-normal) var(--ease-soft);
+}
+
+.petersburg-tab-content.active {
+    display: block;
+}
+
+.petersburg-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.petersburg-title {
+    color: var(--color-pink);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.petersburg-subtitle {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+}
+
+/* Фильтры */
+
+.filters-container {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: var(--color-white);
+    border: 2px solid var(--color-powder);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--motion-fast) var(--ease-soft);
+}
+
+.filter-btn:hover {
+    border-color: var(--color-pink);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--color-lavender);
+    border-color: var(--color-lavender);
+    color: var(--color-text-primary);
+}
+
+.filter-btn:focus-visible {
+    outline: 3px solid var(--color-pink);
+    outline-offset: 2px;
+}
+
+/* Счётчик выбора */
+
+.selection-counter {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--color-pink);
+    margin-bottom: var(--spacing-lg);
+    font-weight: bold;
+}
+
+/* Сетка карточек мест */
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.place-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-soft);
+    transition: all var(--motion-normal) var(--ease-soft);
+    position: relative;
+    border: 3px solid transparent;
+}
+
+.place-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+}
+
+.place-card.selected {
+    border-color: var(--color-pink);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-powder) 100%);
+}
+
+.place-card:focus-visible {
+    outline: 3px solid var(--color-pink);
+    outline-offset: 2px;
+}
+
+.place-card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.place-card-name {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.place-card-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+}
+
+.place-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.place-select-btn {
+    background: var(--color-pink);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--motion-fast) var(--ease-soft);
+}
+
+.place-select-btn:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+.place-select-btn.selected {
+    background: var(--color-sage);
+}
+
+.place-card-link {
+    background: var(--color-lavender);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--motion-fast) var(--ease-soft);
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.place-card-link:hover {
+    transform: scale(1.05);
+    background: var(--color-pink);
+    color: var(--color-white);
+}
+
+/* Режим маршрута */
+
+.route-datetime-container {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.route-date-container,
+.route-time-container {
+    flex: 1;
+    min-width: 150px;
+}
+
+.route-label {
+    display: block;
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-weight: bold;
+}
+
+.route-input {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 2px solid var(--color-powder);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    transition: border-color var(--motion-fast) var(--ease-soft);
+}
+
+.route-input:focus {
+    outline: none;
+    border-color: var(--color-pink);
+}
+
+.route-list {
+    margin-bottom: var(--spacing-lg);
+}
+
+.route-item {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    box-shadow: var(--shadow-soft);
+    animation: slideUp var(--motion-normal) var(--ease-soft);
+}
+
+.route-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.route-item-name {
+    font-weight: bold;
+    color: var(--color-text-primary);
+    flex: 1;
+}
+
+.route-item-time {
+    font-size: var(--font-size-sm);
+    color: var(--color-pink);
+    font-weight: 500;
+    background: var(--color-powder);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+}
+
+.route-item-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.route-action-btn {
+    background: var(--color-powder);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--motion-fast) var(--ease-soft);
+}
+
+.route-action-btn:hover {
+    background: var(--color-pink);
+    color: var(--color-white);
+}
+
+.route-action-btn.delete:hover {
+    background: #e74c3c;
+    color: var(--color-white);
+}
+
+.route-item-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.route-item-warning {
+    color: #e74c3c;
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs);
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.route-time-mode {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.route-mode-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+}
+
+.route-mode-label input[type="radio"] {
+    cursor: pointer;
+}
+
+.route-time-inputs {
+    margin-bottom: var(--spacing-sm);
+}
+
+.route-duration-input {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.route-duration-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+.route-field {
+    width: 100%;
+    padding: var(--spacing-xs);
+    border: 1px solid var(--color-powder);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-family: inherit;
+}
+
+.route-field.time-field,
+.route-field.duration-field {
+    max-width: 150px;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--color-text-secondary);
+    padding: var(--spacing-xl);
+    font-style: italic;
+}
+
+.route-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.btn-secondary {
+    background: var(--color-powder);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all var(--motion-fast) var(--ease-soft);
+}
+
+.btn-secondary:hover {
+    background: var(--color-pink);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+/* Режим настроения */
+
+.moods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.mood-card {
+    background: var(--color-white);
+    border: 3px solid var(--color-powder);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--motion-normal) var(--ease-soft);
+}
+
+.mood-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-pink);
+    box-shadow: var(--shadow-medium);
+}
+
+.mood-card.selected {
+    border-color: var(--color-pink);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-powder) 100%);
+}
+
+.mood-card-icon {
+    font-size: 40px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.mood-card-name {
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.mood-card-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.personal-note-container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.personal-note-input {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 2px solid var(--color-powder);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color var(--motion-fast) var(--ease-soft);
+}
+
+.personal-note-input:focus {
+    outline: none;
+    border-color: var(--color-pink);
+}
+
+.secret-heart-container {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+.secret-heart {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    transition: transform var(--motion-normal) var(--ease-soft);
+    animation: float 3s var(--ease-smooth) infinite;
+}
+
+.secret-heart:hover {
+    transform: scale(1.2);
+}
+
+.secret-heart-icon {
+    width: 50px;
+    height: 50px;
+    fill: var(--color-pink);
+    filter: drop-shadow(0 2px 4px rgba(217, 144, 166, 0.4));
+}
+
+.secret-message {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-pink);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-lg);
+    animation: scaleIn var(--motion-normal) var(--ease-bounce);
+}
+
+/* Итоговая открытка */
+
+.final-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-medium);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.final-card-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-powder);
+}
+
+.final-card-title {
+    color: var(--color-pink);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.final-card-date {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+}
+
+.final-card-mood {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-powder) 0%, var(--color-lavender) 100%);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+}
+
+.final-card-route {
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.final-route-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-powder) 50%);
+    border-radius: var(--radius-md);
+    position: relative;
+}
+
+.final-route-item::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    bottom: -20px;
+    width: 2px;
+    background: var(--color-pink);
+    opacity: 0.3;
+}
+
+.final-route-item:last-child::before {
+    display: none;
+}
+
+.final-route-time {
+    flex-shrink: 0;
+    min-width: 100px;
+    font-weight: bold;
+    color: var(--color-pink);
+    font-size: var(--font-size-md);
+    text-align: center;
+    padding: var(--spacing-xs);
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-soft);
+}
+
+.final-route-content {
+    flex: 1;
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: flex-start;
+}
+
+.final-route-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.final-route-details {
+    flex: 1;
+}
+
+.final-route-number {
+    font-weight: bold;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+}
+
+.final-route-duration {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.final-route-note {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-top: var(--spacing-xs);
+}
+
+.final-route-fixed-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-lavender);
+    font-weight: 500;
+    margin-top: var(--spacing-xs);
+}
+
+.final-route-transition {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-powder) 0%, var(--color-white) 100%);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--color-lavender);
+}
+
+.final-route-transition-icon {
+    font-size: 20px;
+}
+
+.final-route-transition-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.final-card-notes {
+    background: var(--color-powder);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-style: italic;
+    color: var(--color-text-secondary);
+    position: relative;
+}
+
+.final-card-notes::before {
+    content: '💭';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    font-size: 24px;
+}
+
+.final-card-footer-text {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-lavender) 100%);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.final-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+/* Экран 5: Финальная открытка */
+
+.screen-final {
+    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-pink) 100%);
+}
+
+.envelope-container {
+    text-align: center;
+    margin: var(--spacing-xl) 0;
+}
+
+.envelope {
+    position: relative;
+    margin: var(--spacing-lg) auto;
+    animation: scaleIn var(--motion-slow) var(--ease-bounce) forwards;
+}
+
+.envelope-svg {
+    width: 250px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+.envelope-decoration {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+}
+
+.flower-decoration {
+    width: 30px;
+    height: 30px;
+    animation: sway 3s var(--ease-smooth) infinite;
+}
+
+.letter-content {
+    text-align: center;
+    animation: fadeIn var(--motion-slow) var(--ease-soft) forwards;
+}
+
+.letter-paper {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    max-width: 400px;
+    margin: var(--spacing-lg) auto;
+    font-family: 'Georgia', serif;
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--color-text-primary);
+}
+
+.final-message {
+    margin-bottom: var(--spacing-md);
+}
+
+.final-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.bouquet-container {
+    margin: var(--spacing-md) 0;
+}
+
+.bouquet-svg {
+    width: 150px;
+    height: auto;
+    animation: sway 4s var(--ease-smooth) infinite;
+}
+
+.final-signature {
+    font-size: var(--font-size-xl);
+    color: var(--color-pink);
+    margin-top: var(--spacing-lg);
+    font-style: italic;
+}
+
+/* Адаптивность */
+
+@media (max-width: 480px) {
+    .cat-image {
+        width: 160px;
+        height: 160px;
+    }
+
+
+    .heart {
+        width: 60px;
+        height: 60px;
+    }
+
+    .gift-box {
+        width: 100px;
+    }
+
+    .envelope-svg {
+        width: 200px;
+    }
+
+    .letter-paper {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+
+    .petersburg-icon {
+        width: 60px;
+    }
+}

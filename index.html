@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полиночка и маленькое чудо</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/game.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Экран 1: Старт -->
+        <section id="screen-intro" class="screen screen-intro">
+            <div class="cat-container">
+                <img id="cat-main" class="cat-image cat-interactive cat-base" src="assets/images/cat-main.svg" alt="Милый котик" />
+                <img id="cat-main-hover" class="cat-image cat-interactive cat-hover" src="assets/images/cat-happy.svg" alt="Радостный котик" />
+            </div>
+
+            <h1 class="title-main" id="intro-title"></h1>
+
+            <div class="cat-speech">
+                <p id="intro-cat-speech"></p>
+            </div>
+
+            <button id="btn-start" class="btn-primary" aria-label="Начать приключение"></button>
+        </section>
+
+        <!-- Экран 2: Сбор сердечек -->
+        <section id="screen-hearts" class="screen screen-hearts hidden">
+            <div class="scene-container">
+                <div class="hearts-scene">
+                    <button class="heart heart-1" data-heart="1" aria-label="Собрать сердечко 1">
+                        <svg viewBox="0 0 100 100" class="heart-icon">
+                            <path d="M50 88 C20 60 10 40 25 25 C35 15 45 20 50 30 C55 20 65 15 75 25 C90 40 80 60 50 88 Z" />
+                        </svg>
+                    </button>
+                    <button class="heart heart-2" data-heart="2" aria-label="Собрать сердечко 2">
+                        <svg viewBox="0 0 100 100" class="heart-icon">
+                            <path d="M50 88 C20 60 10 40 25 25 C35 15 45 20 50 30 C55 20 65 15 75 25 C90 40 80 60 50 88 Z" />
+                        </svg>
+                    </button>
+                    <button class="heart heart-3" data-heart="3" aria-label="Собрать сердечко 3">
+                        <svg viewBox="0 0 100 100" class="heart-icon">
+                            <path d="M50 88 C20 60 10 40 25 25 C35 15 45 20 50 30 C55 20 65 15 75 25 C90 40 80 60 50 88 Z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="progress-container">
+                    <span class="progress-label">Собрано сердечек:</span>
+                    <span id="hearts-progress" class="progress-value">0/3</span>
+                </div>
+
+                <div id="hearts-message" class="message-box hidden"></div>
+
+                <div id="hearts-complete" class="completion-section hidden">
+                    <div class="cat-container">
+                        <img id="cat-happy" class="cat-image cat-happy-img cat-interactive cat-base" src="assets/images/cat-happy.svg" alt="Радостный котик" />
+                        <img id="cat-happy-hover" class="cat-image cat-interactive cat-hover" src="assets/images/cat-main.svg" alt="Котик" />
+                    </div>
+                    <p id="hearts-complete-text" class="completion-text"></p>
+                    <button id="btn-hearts-continue" class="btn-primary">Продолжить ♡</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Экран 3: Три подарка -->
+        <section id="screen-gifts" class="screen screen-gifts hidden">
+            <div class="scene-container">
+                <h2 class="scene-title">Три подарка для тебя</h2>
+
+                <div class="gifts-container">
+                    <div class="gift-box gift-1" data-gift="1">
+                        <div class="gift-container">
+                            <svg class="gift-svg" viewBox="0 0 200 200">
+                                <!-- Коробка -->
+                                <rect x="20" y="80" width="160" height="100" fill="#D990A6" rx="8" />
+                                <rect x="20" y="80" width="160" height="100" fill="none" stroke="#C7B8DF" stroke-width="2" rx="8" />
+                                <!-- Вертикальная лента -->
+                                <rect x="90" y="80" width="20" height="100" fill="#F8EAE4" />
+                                <rect x="90" y="80" width="20" height="100" fill="none" stroke="#E8D8D0" stroke-width="1" />
+                                <!-- Крышка -->
+                                <rect x="20" y="60" width="160" height="25" fill="#C7B8DF" rx="8" />
+                                <rect x="20" y="60" width="160" height="25" fill="none" stroke="#B8A8C8" stroke-width="2" rx="8" />
+                                <!-- Лента на крышке -->
+                                <rect x="90" y="60" width="20" height="25" fill="#F8EAE4" />
+                                <!-- Бант -->
+                                <ellipse cx="100" cy="50" rx="15" ry="10" fill="#F8EAE4" />
+                                <ellipse cx="85" cy="48" rx="12" ry="8" fill="#F8EAE4" transform="rotate(-30 85 48)" />
+                                <ellipse cx="115" cy="48" rx="12" ry="8" fill="#F8EAE4" transform="rotate(30 115 48)" />
+                                <circle cx="100" cy="50" r="5" fill="#D990A6" />
+                            </svg>
+                        </div>
+                        <div class="gift-message hidden" id="gift-message-1"></div>
+                    </div>
+
+                    <div class="gift-box gift-2" data-gift="2">
+                        <div class="gift-container">
+                            <svg class="gift-svg" viewBox="0 0 200 200">
+                                <!-- Коробка -->
+                                <rect x="20" y="80" width="160" height="100" fill="#B8C8A9" rx="8" />
+                                <rect x="20" y="80" width="160" height="100" fill="none" stroke="#A8B898" stroke-width="2" rx="8" />
+                                <!-- Вертикальная лента -->
+                                <rect x="90" y="80" width="20" height="100" fill="#F8EAE4" />
+                                <rect x="90" y="80" width="20" height="100" fill="none" stroke="#E8D8D0" stroke-width="1" />
+                                <!-- Крышка -->
+                                <rect x="20" y="60" width="160" height="25" fill="#D990A6" rx="8" />
+                                <rect x="20" y="60" width="160" height="25" fill="none" stroke="#C98096" stroke-width="2" rx="8" />
+                                <!-- Лента на крышке -->
+                                <rect x="90" y="60" width="20" height="25" fill="#F8EAE4" />
+                                <!-- Бант -->
+                                <ellipse cx="100" cy="50" rx="15" ry="10" fill="#F8EAE4" />
+                                <ellipse cx="85" cy="48" rx="12" ry="8" fill="#F8EAE4" transform="rotate(-30 85 48)" />
+                                <ellipse cx="115" cy="48" rx="12" ry="8" fill="#F8EAE4" transform="rotate(30 115 48)" />
+                                <circle cx="100" cy="50" r="5" fill="#B8C8A9" />
+                            </svg>
+                        </div>
+                        <div class="gift-message hidden" id="gift-message-2"></div>
+                    </div>
+
+                    <div class="gift-box gift-3" data-gift="3">
+                        <div class="gift-container">
+                            <svg class="gift-svg" viewBox="0 0 200 200">
+                                <!-- Коробка -->
+                                <rect x="20" y="80" width="160" height="100" fill="#C7B8DF" rx="8" />
+                                <rect x="20" y="80" width="160" height="100" fill="none" stroke="#B7A8CF" stroke-width="2" rx="8" />
+                                <!-- Вертикальная лента -->
+                                <rect x="90" y="80" width="20" height="100" fill="#F8EAE4" />
+                                <rect x="90" y="80" width="20" height="100" fill="none" stroke="#E8D8D0" stroke-width="1" />
+                                <!-- Крышка -->
+                                <rect x="20" y="60" width="160" height="25" fill="#B8C8A9" rx="8" />
+                                <rect x="20" y="60" width="160" height="25" fill="none" stroke="#A8B898" stroke-width="2" rx="8" />
+                                <!-- Лента на крышке -->
+                                <rect x="90" y="60" width="20" height="25" fill="#F8EAE4" />
+                                <!-- Бант -->
+                                <ellipse cx="100" cy="50" rx="15" ry="10" fill="#F8EAE4" />
+                                <ellipse cx="85" cy="48" rx="12" ry="8" fill="#F8EAE4" transform="rotate(-30 85 48)" />
+                                <ellipse cx="115" cy="48" rx="12" ry="8" fill="#F8EAE4" transform="rotate(30 115 48)" />
+                                <circle cx="100" cy="50" r="5" fill="#C7B8DF" />
+                            </svg>
+                        </div>
+                        <div class="gift-message hidden" id="gift-message-3"></div>
+                    </div>
+                </div>
+
+                <div id="gifts-complete" class="completion-section hidden">
+                    <button id="btn-gifts-continue" class="btn-primary">Продолжить ♡</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Экран 4: Планер Санкт-Петербурга -->
+        <div id="easter-egg-trigger" class="easter-egg-trigger" aria-label="Планер Петербурга">
+            <svg viewBox="0 0 60 60" class="paw-icon">
+                <ellipse cx="30" cy="35" rx="18" ry="15" fill="#F8EAE4" />
+                <circle cx="20" cy="22" r="6" fill="#F8EAE4" />
+                <circle cx="40" cy="22" r="6" fill="#F8EAE4" />
+                <circle cx="30" cy="18" r="6" fill="#F8EAE4" />
+            </svg>
+        </div>
+
+        <div id="petersburg-modal" class="modal modal-petersburg hidden" role="dialog" aria-modal="true">
+            <div class="modal-content modal-content-petersburg">
+                <button id="btn-close-petersburg" class="btn-close" aria-label="Закрыть">✕</button>
+
+                <!-- Навигация режимов -->
+                <div class="petersburg-tabs">
+                    <button class="petersburg-tab active" data-tab="select">Места</button>
+                    <button class="petersburg-tab" data-tab="route">Составляем маршрут</button>
+                    <button class="petersburg-tab" data-tab="mood">Настроение</button>
+                    <button class="petersburg-tab" data-tab="final">Наша открытка</button>
+                </div>
+
+                <!-- Режим 1: Выбор мест -->
+                <div id="tab-select" class="petersburg-tab-content active">
+                    <div class="petersburg-header">
+                        <h2 class="petersburg-title" id="petersburg-title"></h2>
+                        <p class="petersburg-subtitle" id="petersburg-subtitle"></p>
+                    </div>
+
+                    <!-- Фильтры -->
+                    <div class="filters-container">
+                        <button class="filter-btn active" data-filter="all">Все</button>
+                        <button class="filter-btn" data-filter="food">Еда</button>
+                        <button class="filter-btn" data-filter="culture">Прогулка и культура</button>
+                        <button class="filter-btn" data-filter="selected">Выбранное</button>
+                    </div>
+
+                    <!-- Счётчик -->
+                    <div class="selection-counter" id="selection-counter"></div>
+
+                    <!-- Сетка карточек мест -->
+                    <div class="places-grid" id="places-grid"></div>
+                </div>
+
+                <!-- Режим 2: Составление маршрута -->
+                <div id="tab-route" class="petersburg-tab-content hidden">
+                    <h2 class="petersburg-title" id="route-title"></h2>
+
+                    <!-- Дата и время -->
+                    <div class="route-datetime-container">
+                        <div class="route-date-container">
+                            <label class="route-label" id="date-label"></label>
+                            <input type="date" id="route-date" class="route-input" />
+                        </div>
+                        <div class="route-time-container">
+                            <label class="route-label" id="start-time-label"></label>
+                            <input type="time" id="route-start-time" class="route-input" value="10:00" />
+                        </div>
+                        <div class="route-time-container">
+                            <label class="route-label" id="end-time-label"></label>
+                            <input type="time" id="route-end-time" class="route-input" />
+                        </div>
+                    </div>
+
+                    <p class="route-hint" id="route-hint"></p>
+
+                    <!-- Список выбранных мест -->
+                    <div class="route-list" id="route-list">
+                        <div class="empty-state" id="route-empty"></div>
+                    </div>
+
+                    <!-- Кнопки действий -->
+                    <div class="route-actions">
+                        <button id="btn-clear-plan" class="btn-secondary"></button>
+                    </div>
+                </div>
+
+                <!-- Режим 3: Настроение -->
+                <div id="tab-mood" class="petersburg-tab-content hidden">
+                    <h2 class="petersburg-title" id="mood-title"></h2>
+
+                    <div class="moods-grid" id="moods-grid"></div>
+
+                    <!-- Личная заметка -->
+                    <div class="personal-note-container">
+                        <label class="route-label" id="personal-note-label"></label>
+                        <textarea id="personal-note" class="personal-note-input" rows="4" placeholder="Напиши что-нибудь особенное..."></textarea>
+                    </div>
+
+                    <!-- Секретное сердечко -->
+                    <div class="secret-heart-container">
+                        <button id="secret-heart" class="secret-heart" aria-label="Секрет">
+                            <svg viewBox="0 0 50 50" class="secret-heart-icon">
+                                <path d="M25 45 C10 30 5 20 12 12 C18 7 22 10 25 15 C28 10 32 7 38 12 C45 20 40 30 25 45 Z" fill="#D990A6"/>
+                            </svg>
+                        </button>
+                        <div id="secret-message" class="secret-message hidden"></div>
+                    </div>
+                </div>
+
+                <!-- Режим 4: Итоговая открытка -->
+                <div id="tab-final" class="petersburg-tab-content hidden">
+                    <div class="final-card" id="final-card">
+                        <div class="final-card-header">
+                            <h2 class="final-card-title" id="final-card-title"></h2>
+                            <div class="final-card-date" id="final-card-date"></div>
+                        </div>
+
+                        <div class="final-card-mood" id="final-card-mood"></div>
+
+                        <div class="final-card-route" id="final-card-route"></div>
+
+                        <div class="final-card-notes" id="final-card-notes"></div>
+
+                        <div class="final-card-footer-text" id="final-card-footer-text"></div>
+
+                        <div class="final-card-footer">
+                            <button id="btn-download-card" class="btn-primary">Скачать открытку</button>
+                            <button id="btn-copy-plan" class="btn-secondary">Скопировать план</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Экран 5: Финальная открытка -->
+        <section id="screen-final" class="screen screen-final hidden">
+            <div class="scene-container">
+                <h2 class="scene-title" id="final-title"></h2>
+
+                <div id="envelope-container" class="envelope-container">
+                    <div class="envelope">
+                        <svg viewBox="0 0 300 200" class="envelope-svg">
+                            <rect x="20" y="40" width="260" height="140" fill="#F8EAE4" rx="8" />
+                            <polygon points="20,40 150,120 280,40" fill="#D990A6" opacity="0.6" />
+                            <rect x="20" y="40" width="260" height="20" fill="#C7B8DF" opacity="0.4" />
+                        </svg>
+                        <div class="envelope-decoration">
+                            <svg viewBox="0 0 50 50" class="flower-decoration">
+                                <circle cx="25" cy="15" r="8" fill="#D990A6" />
+                                <circle cx="15" cy="25" r="8" fill="#D990A6" />
+                                <circle cx="35" cy="25" r="8" fill="#D990A6" />
+                                <circle cx="20" cy="35" r="8" fill="#D990A6" />
+                                <circle cx="30" cy="35" r="8" fill="#D990A6" />
+                                <circle cx="25" cy="25" r="6" fill="#F8EAE4" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <button id="btn-open-letter" class="btn-primary">Открыть письмо ♡</button>
+                </div>
+
+                <div id="letter-content" class="letter-content hidden">
+                    <div class="letter-paper">
+                        <p id="final-message" class="final-message"></p>
+                    </div>
+
+                    <div class="final-scene">
+                        <div class="cat-container">
+                            <img id="cat-final" class="cat-image cat-final-img cat-interactive cat-base" src="assets/images/cat-final.svg" alt="Котик с цветами" />
+                            <img id="cat-final-hover" class="cat-image cat-interactive cat-hover" src="assets/images/cat-happy.svg" alt="Радостный котик" />
+                        </div>
+                        <div class="bouquet-container">
+                            <svg viewBox="0 0 200 250" class="bouquet-svg">
+                                <path d="M100,200 Q90,150 70,120" stroke="#B8C8A9" stroke-width="3" fill="none" />
+                                <path d="M100,200 Q100,140 100,100" stroke="#B8C8A9" stroke-width="3" fill="none" />
+                                <path d="M100,200 Q110,150 130,120" stroke="#B8C8A9" stroke-width="3" fill="none" />
+                                <circle cx="70" cy="110" r="20" fill="#D990A6" />
+                                <circle cx="100" cy="90" r="22" fill="#C7B8DF" />
+                                <circle cx="130" cy="110" r="20" fill="#D990A6" />
+                                <circle cx="85" cy="120" r="15" fill="#B8C8A9" />
+                                <circle cx="115" cy="120" r="15" fill="#B8C8A9" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <p id="final-signature" class="final-signature"></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/content.js"></script>
+    <script src="js/petersburg.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <defs>
+    <!-- Градиент для левого котика (кремовый) -->
+    <radialGradient id="leftCatGradient" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#F8E6D3"/>
+      <stop offset="100%" stop-color="#E8D6C3"/>
+    </radialGradient>
+    
+    <!-- Градиент для правого котика (сливочный) -->
+    <radialGradient id="rightCatGradient" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#F8ECDC"/>
+      <stop offset="100%" stop-color="#E8DCCC"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Левый котик (кремовый с розовым бантиком) -->
+  <g id="cat-left">
+    <!-- Тело -->
+    <ellipse cx="80" cy="150" rx="35" ry="25" fill="url(#leftCatGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    
+    <!-- Голова -->
+    <ellipse cx="80" cy="110" rx="40" ry="35" fill="url(#leftCatGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    
+    <!-- Левое ухо -->
+    <path d="M50 85 Q40 60 60 50 Q75 60 70 80 Z" fill="url(#leftCatGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    <path d="M53 78 Q47 62 60 55 Q68 62 65 75 Z" fill="#F8E0D8"/>
+    
+    <!-- Правое ухо -->
+    <path d="M110 85 Q120 60 100 50 Q85 60 90 80 Z" fill="url(#leftCatGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    <path d="M107 78 Q113 62 100 55 Q92 62 95 75 Z" fill="#F8E0D8"/>
+    
+    <!-- Румянец -->
+    <ellipse cx="65" cy="115" rx="10" ry="7" fill="#F5C8CC" opacity="0.5"/>
+    
+    <!-- Нос -->
+    <ellipse cx="80" cy="120" rx="5" ry="4" fill="#F5A8B0"/>
+    
+    <!-- Рот -->
+    <path d="M75 128 Q80 135 85 128" fill="none" stroke="#D9A0A8" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Глаза (смотрит вправо) -->
+    <ellipse cx="70" cy="105" rx="6" ry="8" fill="#FFFFFF" stroke="#D9C4B0" stroke-width="1"/>
+    <ellipse cx="90" cy="105" rx="6" ry="8" fill="#FFFFFF" stroke="#D9C4B0" stroke-width="1"/>
+    <circle cx="72" cy="106" r="3" fill="#2C2420"/>
+    <circle cx="92" cy="106" r="3" fill="#2C2420"/>
+    <circle cx="70" cy="103" r="2" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="90" cy="103" r="2" fill="#FFFFFF" opacity="0.8"/>
+    
+    <!-- Бантик (розовый) -->
+    <ellipse cx="80" cy="70" rx="10" ry="6" fill="#F5A8B0" transform="rotate(-30 80 70)"/>
+    <ellipse cx="80" cy="70" rx="10" ry="6" fill="#F5A8B0" transform="rotate(30 80 70)"/>
+    <circle cx="80" cy="70" r="4" fill="#E898A8"/>
+    
+    <!-- Лапки -->
+    <ellipse cx="60" cy="165" rx="10" ry="6" fill="url(#leftCatGradient)" stroke="#D9C4B0" stroke-width="1"/>
+    <ellipse cx="100" cy="165" rx="10" ry="6" fill="url(#leftCatGradient)" stroke="#D9C4B0" stroke-width="1"/>
+    
+    <!-- Хвост -->
+    <path d="M115 150 Q140 140 150 130" fill="none" stroke="url(#leftCatGradient)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Правый котик (сливочный с лавандовым бантиком) -->
+  <g id="cat-right">
+    <!-- Тело -->
+    <ellipse cx="220" cy="150" rx="35" ry="25" fill="url(#rightCatGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    
+    <!-- Голова -->
+    <ellipse cx="220" cy="110" rx="40" ry="35" fill="url(#rightCatGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    
+    <!-- Левое ухо -->
+    <path d="M190 85 Q180 60 200 50 Q215 60 210 80 Z" fill="url(#rightCatGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    <path d="M193 78 Q187 62 200 55 Q208 62 205 75 Z" fill="#F8E0D8"/>
+    
+    <!-- Правое ухо -->
+    <path d="M250 85 Q260 60 240 50 Q225 60 230 80 Z" fill="url(#rightCatGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    <path d="M247 78 Q253 62 240 55 Q232 62 235 75 Z" fill="#F8E0D8"/>
+    
+    <!-- Румянец -->
+    <ellipse cx="235" cy="115" rx="10" ry="7" fill="#F5C8CC" opacity="0.5"/>
+    
+    <!-- Нос -->
+    <ellipse cx="220" cy="120" rx="5" ry="4" fill="#F5A8B0"/>
+    
+    <!-- Рот -->
+    <path d="M215 128 Q220 135 225 128" fill="none" stroke="#D9A0A8" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Глаза (смотрит влево) -->
+    <ellipse cx="210" cy="105" rx="6" ry="8" fill="#FFFFFF" stroke="#D9C4B0" stroke-width="1"/>
+    <ellipse cx="230" cy="105" rx="6" ry="8" fill="#FFFFFF" stroke="#D9C4B0" stroke-width="1"/>
+    <circle cx="208" cy="106" r="3" fill="#2C2420"/>
+    <circle cx="228" cy="106" r="3" fill="#2C2420"/>
+    <circle cx="210" cy="103" r="2" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="230" cy="103" r="2" fill="#FFFFFF" opacity="0.8"/>
+    
+    <!-- Бантик (лавандовый) -->
+    <ellipse cx="220" cy="70" rx="10" ry="6" fill="#C7B8DF" transform="rotate(-30 220 70)"/>
+    <ellipse cx="220" cy="70" rx="10" ry="6" fill="#C7B8DF" transform="rotate(30 220 70)"/>
+    <circle cx="220" cy="70" r="4" fill="#B7A8CF"/>
+    
+    <!-- Лапки -->
+    <ellipse cx="200" cy="165" rx="10" ry="6" fill="url(#rightCatGradient)" stroke="#D9C4B0" stroke-width="1"/>
+    <ellipse cx="240" cy="165" rx="10" ry="6" fill="url(#rightCatGradient)" stroke="#D9C4B0" stroke-width="1"/>
+    
+    <!-- Хвост -->
+    <path d="M185 150 Q160 140 150 130" fill="none" stroke="url(#rightCatGradient)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Плавающее сердечко (появляется при поцелуе) -->
+  <g id="floating-heart" opacity="0.8">
+    <path d="M150 85 
+             C140 75 130 70 135 60 
+             C140 50 150 55 150 60 
+             C150 55 160 50 165 60 
+             C170 70 160 75 150 85 Z"
+          fill="#F5A8B0" stroke="#E898A8" stroke-width="1"/>
+  </g>
+</svg>

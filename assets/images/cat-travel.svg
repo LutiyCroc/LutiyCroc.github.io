@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Тело -->
+  <ellipse cx="100" cy="140" rx="50" ry="40" fill="#F5E6D3"/>
+  
+  <!-- Голова -->
+  <circle cx="100" cy="80" r="45" fill="#F5E6D3"/>
+  
+  <!-- Левое ухо -->
+  <path d="M60 50 L55 20 L85 35 Z" fill="#F5E6D3"/>
+  <path d="M62 48 L58 25 L82 37 Z" fill="#D990A6"/>
+  
+  <!-- Правое ухо -->
+  <path d="M140 50 L145 20 L115 35 Z" fill="#F5E6D3"/>
+  <path d="M138 48 L142 25 L118 37 Z" fill="#D990A6"/>
+  
+  <!-- Глаза -->
+  <ellipse cx="80" cy="75" rx="8" ry="10" fill="#514442"/>
+  <ellipse cx="120" cy="75" rx="8" ry="10" fill="#514442"/>
+  <circle cx="82" cy="73" r="3" fill="#FFFFFF"/>
+  <circle cx="122" cy="73" r="3" fill="#FFFFFF"/>
+  
+  <!-- Нос -->
+  <ellipse cx="100" cy="90" rx="5" ry="4" fill="#D990A6"/>
+  
+  <!-- Рот -->
+  <path d="M95 95 Q100 100 105 95" stroke="#514442" stroke-width="2" fill="none"/>
+  
+  <!-- Усы -->
+  <line x1="60" y1="88" x2="45" y2="85" stroke="#514442" stroke-width="1.5"/>
+  <line x1="60" y1="92" x2="45" y2="92" stroke="#514442" stroke-width="1.5"/>
+  <line x1="140" y1="88" x2="155" y2="85" stroke="#514442" stroke-width="1.5"/>
+  <line x1="140" y1="92" x2="155" y2="92" stroke="#514442" stroke-width="1.5"/>
+  
+  <!-- Бантик -->
+  <ellipse cx="100" cy="40" rx="12" ry="8" fill="#D990A6"/>
+  <circle cx="100" cy="40" r="4" fill="#F5E6D3"/>
+  
+  <!-- Чемодан -->
+  <rect x="55" y="160" width="90" height="35" rx="5" fill="#C7B8DF"/>
+  <rect x="95" y="155" width="10" height="8" rx="2" fill="#B8C8A9"/>
+  <rect x="60" y="168" width="80" height="3" fill="#D990A6"/>
+  
+  <!-- Лапки на чемодане -->
+  <ellipse cx="75" cy="160" rx="12" ry="8" fill="#F5E6D3"/>
+  <ellipse cx="125" cy="160" rx="12" ry="8" fill="#F5E6D3"/>
+  
+  <!-- Хвост -->
+  <path d="M150 140 Q170 120 165 100 Q160 90 155 95" stroke="#F5E6D3" stroke-width="12" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,63 @@
+:root {
+    /* Цветовая палитра */
+    --color-bg: #FFF8F1;
+    --color-powder: #F8EAE4;
+    --color-pink: #D990A6;
+    --color-sage: #B8C8A9;
+    --color-lavender: #C7B8DF;
+    --color-text-primary: #514442;
+    --color-text-secondary: #8B7772;
+    --color-white: #FFFFFF;
+
+    /* Motion timings */
+    --motion-fast: 220ms;
+    --motion-normal: 480ms;
+    --motion-slow: 850ms;
+    --motion-dreamy: 1200ms;
+
+    /* Easing functions */
+    --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 12px rgba(81, 68, 66, 0.08);
+    --shadow-medium: 0 8px 24px rgba(81, 68, 66, 0.12);
+    --shadow-glow: 0 0 20px rgba(217, 144, 166, 0.3);
+
+    /* Typography */
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 40px;
+
+    /* Z-index layers */
+    --z-base: 1;
+    --z-elevated: 10;
+    --z-modal: 100;
+    --z-tooltip: 200;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --motion-fast: 0ms;
+        --motion-normal: 0ms;
+        --motion-slow: 0ms;
+        --motion-dreamy: 0ms;
+    }
+}

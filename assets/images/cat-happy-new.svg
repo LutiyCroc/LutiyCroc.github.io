@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320">
+  <defs>
+    <!-- Градиент для мягкого объёма -->
+    <radialGradient id="bodyGradient" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#F8E6D3"/>
+      <stop offset="100%" stop-color="#E8D6C3"/>
+    </radialGradient>
+    
+    <radialGradient id="earGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#F8E6D3"/>
+      <stop offset="100%" stop-color="#E0CEBB"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Хвост -->
+  <g id="tail">
+    <path d="M220 240 Q260 220 280 200 Q290 190 285 180 Q280 190 270 200 Q250 220 220 240"
+          fill="url(#bodyGradient)" stroke="#D9C4B0" stroke-width="2"/>
+  </g>
+
+  <!-- Тело -->
+  <g id="body">
+    <ellipse cx="160" cy="260" rx="60" ry="45" fill="url(#bodyGradient)"/>
+  </g>
+
+  <!-- Уши -->
+  <g id="ears">
+    <!-- Левое ухо -->
+    <path d="M95 130 Q80 80 110 60 Q130 75 125 115 Z" fill="url(#earGradient)" stroke="#D9C4B0" stroke-width="2"/>
+    <path d="M100 120 Q90 90 110 75 Q120 85 118 110 Z" fill="#F8E0D8"/>
+    
+    <!-- Правое ухо -->
+    <path d="M225 130 Q240 80 210 60 Q190 75 195 115 Z" fill="url(#earGradient)" stroke="#D9C4B0" stroke-width="2"/>
+    <path d="M220 120 Q230 90 210 75 Q200 85 202 110 Z" fill="#F8E0D8"/>
+  </g>
+
+  <!-- Голова -->
+  <g id="head">
+    <ellipse cx="160" cy="175" rx="70" ry="65" fill="url(#bodyGradient)" stroke="#D9C4B0" stroke-width="2"/>
+  </g>
+
+  <!-- Морда -->
+  <g id="face">
+    <!-- Румянец -->
+    <g id="blush">
+      <ellipse cx="115" cy="185" rx="18" ry="12" fill="#F5C8CC" opacity="0.6"/>
+      <ellipse cx="205" cy="185" rx="18" ry="12" fill="#F5C8CC" opacity="0.6"/>
+    </g>
+    
+    <!-- Нос -->
+    <ellipse cx="160" cy="190" rx="8" ry="6" fill="#F5A8B0"/>
+    
+    <!-- Рот (широкая улыбка) -->
+    <path d="M140 198 Q160 220 180 198" fill="none" stroke="#D9A0A8" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Усы -->
+    <g id="whiskers" stroke="#514442" stroke-width="1.5" stroke-linecap="round">
+      <!-- Левые усы -->
+      <line x1="90" y1="185" x2="60" y2="180"/>
+      <line x1="90" y1="190" x2="55" y2="190"/>
+      <line x1="90" y1="195" x2="60" y2="200"/>
+      
+      <!-- Правые усы -->
+      <line x1="230" y1="185" x2="260" y2="180"/>
+      <line x1="230" y1="190" x2="265" y2="190"/>
+      <line x1="230" y1="195" x2="260" y2="200"/>
+    </g>
+  </g>
+
+  <!-- Глаза - радостные (улыбающиеся) -->
+  <g id="eyes">
+    <!-- Левый глаз -->
+    <g id="left-eye">
+      <!-- Улыбающаяся форма глаза -->
+      <path d="M110 155 Q130 145 150 155" fill="none" stroke="#514442" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- Маленький блик -->
+      <circle cx="125" cy="150" r="2" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+    
+    <!-- Правый глаз -->
+    <g id="right-eye">
+      <!-- Улыбающаяся форма глаза -->
+      <path d="M170 155 Q190 145 210 155" fill="none" stroke="#514442" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- Маленький блик -->
+      <circle cx="195" cy="150" r="2" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Лапки -->
+  <g id="paws">
+    <!-- Левая лапка -->
+    <ellipse cx="130" cy="290" rx="15" ry="10" fill="url(#bodyGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+    
+    <!-- Правая лапка -->
+    <ellipse cx="190" cy="290" rx="15" ry="10" fill="url(#bodyGradient)" stroke="#D9C4B0" stroke-width="1.5"/>
+  </g>
+
+  <!-- Бантик -->
+  <g id="bow">
+    <!-- Левая часть банта -->
+    <ellipse cx="160" cy="115" rx="18" ry="12" fill="#F5A8B0" transform="rotate(-30 160 115)"/>
+    
+    <!-- Правая часть банта -->
+    <ellipse cx="160" cy="115" rx="18" ry="12" fill="#F5A8B0" transform="rotate(30 160 115)"/>
+    
+    <!-- Центр банта -->
+    <circle cx="160" cy="115" r="8" fill="#E898A8"/>
+    
+    <!-- Узел банта -->
+    <circle cx="160" cy="115" r="4" fill="#D88898"/>
+  </g>
+
+  <!-- Маленькие звёздочки (радость) -->
+  <g id="stars" opacity="0.6">
+    <polygon points="50,80 55,95 70,95 58,105 63,120 50,110 37,120 42,105 30,95 45,95" 
+             fill="#C7B8DF" transform="scale(0.5)"/>
+    <polygon points="270,80 275,95 290,95 278,105 283,120 270,110 257,120 262,105 250,95 265,95" 
+             fill="#C7B8DF" transform="scale(0.4)"/>
+  </g>
+</svg>

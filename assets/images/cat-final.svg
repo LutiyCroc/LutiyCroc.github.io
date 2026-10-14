@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Тело -->
+  <ellipse cx="100" cy="140" rx="50" ry="40" fill="#F5E6D3"/>
+  
+  <!-- Голова -->
+  <circle cx="100" cy="80" r="45" fill="#F5E6D3"/>
+  
+  <!-- Левое ухо -->
+  <path d="M60 50 L55 20 L85 35 Z" fill="#F5E6D3"/>
+  <path d="M62 48 L58 25 L82 37 Z" fill="#D990A6"/>
+  
+  <!-- Правое ухо -->
+  <path d="M140 50 L145 20 L115 35 Z" fill="#F5E6D3"/>
+  <path d="M138 48 L142 25 L118 37 Z" fill="#D990A6"/>
+  
+  <!-- Счастливые глаза -->
+  <path d="M72 75 Q80 70 88 75" stroke="#514442" stroke-width="3" fill="none"/>
+  <path d="M112 75 Q120 70 128 75" stroke="#514442" stroke-width="3" fill="none"/>
+  
+  <!-- Нос -->
+  <ellipse cx="100" cy="90" rx="5" ry="4" fill="#D990A6"/>
+  
+  <!-- Улыбка -->
+  <path d="M90 95 Q100 110 110 95" stroke="#514442" stroke-width="2.5" fill="none"/>
+  
+  <!-- Румянец -->
+  <ellipse cx="70" cy="85" rx="8" ry="5" fill="#D990A6" opacity="0.4"/>
+  <ellipse cx="130" cy="85" rx="8" ry="5" fill="#D990A6" opacity="0.4"/>
+  
+  <!-- Усы -->
+  <line x1="60" y1="88" x2="45" y2="85" stroke="#514442" stroke-width="1.5"/>
+  <line x1="60" y1="92" x2="45" y2="92" stroke="#514442" stroke-width="1.5"/>
+  <line x1="140" y1="88" x2="155" y2="85" stroke="#514442" stroke-width="1.5"/>
+  <line x1="140" y1="92" x2="155" y2="92" stroke="#514442" stroke-width="1.5"/>
+  
+  <!-- Бантик -->
+  <ellipse cx="100" cy="40" rx="12" ry="8" fill="#D990A6"/>
+  <circle cx="100" cy="40" r="4" fill="#F5E6D3"/>
+  
+  <!-- Лапки -->
+  <ellipse cx="70" cy="165" rx="15" ry="12" fill="#F5E6D3"/>
+  <ellipse cx="130" cy="165" rx="15" ry="12" fill="#F5E6D3"/>
+  
+  <!-- Цветы в лапах -->
+  <circle cx="65" cy="165" r="8" fill="#D990A6"/>
+  <circle cx="135" cy="165" r="8" fill="#C7B8DF"/>
+  <circle cx="65" cy="165" r="4" fill="#F8EAE4"/>
+  <circle cx="135" cy="165" r="4" fill="#F8EAE4"/>
+  
+  <!-- Хвост -->
+  <path d="M150 140 Q170 120 165 100 Q160 90 155 95" stroke="#F5E6D3" stroke-width="12" fill="none" stroke-linecap="round"/>
+  
+  <!-- Декоративные цветы вокруг -->
+  <circle cx="30" cy="50" r="6" fill="#D990A6" opacity="0.6"/>
+  <circle cx="170" cy="60" r="5" fill="#C7B8DF" opacity="0.6"/>
+  <circle cx="40" cy="180" r="5" fill="#B8C8A9" opacity="0.6"/>
+  <circle cx="160" cy="170" r="6" fill="#D990A6" opacity="0.6"/>
+</svg>
