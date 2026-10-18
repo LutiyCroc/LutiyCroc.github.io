@@ -6,6 +6,7 @@ class Game {
             screen: 'intro',
             collectedHearts: [],
             openedGifts: [],
+            catchCatCompleted: false,
             finalLetterOpened: false
         };
 
@@ -13,6 +14,7 @@ class Game {
             intro: document.getElementById('screen-intro'),
             hearts: document.getElementById('screen-hearts'),
             gifts: document.getElementById('screen-gifts'),
+            catchCat: document.getElementById('screen-catch-cat'),
             final: document.getElementById('screen-final')
         };
 
@@ -24,6 +26,7 @@ class Game {
         this.initIntroButton();
         this.initHearts();
         this.initGifts();
+        this.initCatchCat();
         this.initFinal();
         this.initCatInteractions();
     }
@@ -81,6 +84,11 @@ class Game {
             }, 480);
 
             this.state.screen = screenName;
+
+            // Сбрасываем игру catch-cat при переходе на этот экран
+            if (screenName === 'catchCat' && typeof catchCatGame !== 'undefined') {
+                catchCatGame.reset();
+            }
         }, 480);
     }
 
@@ -312,13 +320,6 @@ class Game {
                 }
             });
         });
-
-        const continueButton = document.getElementById('btn-gifts-continue');
-        if (continueButton) {
-            continueButton.addEventListener('click', () => {
-                this.transitionTo('final');
-            });
-        }
     }
 
     // Создание искрок при наведении на подарок
@@ -429,6 +430,16 @@ class Game {
 
         completeSection.classList.remove('hidden');
         completeSection.style.animation = 'slideUp 0.48s var(--ease-soft) forwards';
+    }
+
+    // Инициализация экрана "Поймай котика"
+    initCatchCat() {
+        const continueButton = document.getElementById('btn-gifts-continue');
+        if (continueButton) {
+            continueButton.addEventListener('click', () => {
+                this.transitionTo('catchCat');
+            });
+        }
     }
 
     // Инициализация финального экрана

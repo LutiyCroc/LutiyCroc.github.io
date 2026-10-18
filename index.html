@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/game.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/catch-cat.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/petersburg.js"></script>
 </head>
 <body>
     <div id="app">
@@ -174,7 +178,57 @@
             </div>
         </section>
 
-        <!-- Экран 4: Планер Санкт-Петербурга -->
+        <!-- Экран 4: Поймай котика -->
+        <section id="screen-catch-cat" class="screen screen-catch-cat hidden">
+            <!-- Декорации -->
+            <img src="assets/images/decoration-stars.svg" class="decoration decoration-float decoration-float-1" alt="" />
+            <img src="assets/images/decoration-stars.svg" class="decoration decoration-float decoration-float-2" alt="" />
+            <img src="assets/images/decoration-confetti.svg" class="decoration decoration-float decoration-float-3" alt="" />
+            <img src="assets/images/decoration-confetti.svg" class="decoration decoration-float decoration-float-4" alt="" />
+
+            <div class="scene-container">
+                <h2 class="scene-title" id="catch-cat-title"></h2>
+                <p class="scene-description" id="catch-cat-description"></p>
+
+                <!-- Игровая область -->
+                <div class="catch-cat-game-area" id="catch-cat-game-area">
+                    <img id="catch-cat" class="catch-cat-image" src="assets/images/cat-running.svg" alt="Бегающий котик" />
+                </div>
+
+                <!-- Прогресс и таймер -->
+                <div class="catch-cat-stats">
+                    <div class="catch-cat-progress">
+                        <span class="progress-label">Поймано:</span>
+                        <span id="catch-cat-progress" class="progress-value">0/5</span>
+                    </div>
+                    <div class="catch-cat-timer">
+                        <span class="timer-label">Время:</span>
+                        <span id="catch-cat-timer" class="timer-value">45</span>
+                    </div>
+                </div>
+
+                <!-- Сообщение при ловле -->
+                <div id="catch-cat-message" class="message-box hidden"></div>
+
+                <!-- Секция завершения -->
+                <div id="catch-cat-complete" class="completion-section hidden">
+                    <div class="catch-cat-complete-content">
+                        <div class="cat-container cat-container-right">
+                            <img id="cat-caught-final" class="cat-image cat-happy-img" src="assets/images/cat-happy.svg" alt="Счастливый котик" />
+                        </div>
+                        <div class="catch-cat-complete-text">
+                            <p id="catch-cat-complete-text" class="completion-text"></p>
+                            <div class="catch-cat-complete-buttons">
+                                <button id="btn-catch-cat-retry" class="btn-secondary">Начать заново</button>
+                                <button id="btn-catch-cat-continue" class="btn-primary">Продолжить ♡</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Экран 5: Планер Санкт-Петербурга -->
         <div id="easter-egg-trigger" class="easter-egg-trigger" aria-label="Планер Петербурга">
             <svg viewBox="0 0 60 60" class="paw-icon">
                 <ellipse cx="30" cy="35" rx="18" ry="15" fill="#F8EAE4" />
@@ -369,6 +423,7 @@
     </div>
 
     <script src="js/content.js"></script>
+    <script src="js/catch-cat.js"></script>
     <script src="js/petersburg.js"></script>
     <script src="js/game.js"></script>
 </body>

@@ -192,9 +192,12 @@
 .completion-section {
     text-align: center;
     margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
     animation: slideUp var(--motion-normal) var(--ease-soft) forwards;
     width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .completion-text {
@@ -270,6 +273,170 @@
     font-size: var(--font-size-sm);
     margin-top: var(--spacing-sm);
     animation: scaleIn var(--motion-normal) var(--ease-bounce) forwards;
+}
+
+/* Экран 4: Поймай котика */
+
+.screen-catch-cat {
+    background: linear-gradient(135deg, #E8D4C4 0%, #B85C78 50%, #8A7AB5 100%);
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.scene-description {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #1A1412;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+}
+
+.catch-cat-game-area {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+    overflow: hidden;
+    border: 3px solid #D8C4B4;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.catch-cat-image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.15s ease-out, left 0.3s ease-out, top 0.3s ease-out;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.catch-cat-image.running {
+    animation: catRun 0.5s ease-in-out infinite alternate;
+}
+
+.catch-cat-image:hover {
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+}
+
+.catch-cat-image.caught {
+    animation: catCaught 0.5s var(--ease-bounce);
+}
+
+.catch-cat-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-md) 0;
+    font-size: 1.1rem;
+    font-family: 'Georgia', serif;
+}
+
+.catch-cat-progress,
+.catch-cat-timer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.6);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 2px solid #D8C4B4;
+}
+
+.progress-label,
+.timer-label {
+    color: #1A1412;
+    font-weight: 500;
+}
+
+.progress-value,
+.timer-value {
+    font-weight: bold;
+    color: #B85C78;
+    font-size: 1.2rem;
+}
+
+.timer-value.urgent {
+    color: #e74c3c;
+    animation: pulse 0.5s ease-in-out infinite;
+}
+
+.catch-cat-complete-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-top: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.catch-cat-complete-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    width: 100%;
+    max-width: 500px;
+}
+
+.cat-container-right {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+}
+
+.catch-cat-complete-text {
+    flex: 1;
+    text-align: center;
+}
+
+/* Мобильная адаптация для экрана поймай котика */
+@media (max-width: 480px) {
+    .catch-cat-game-area {
+        height: 250px;
+    }
+
+    .catch-cat-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .catch-cat-stats {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        font-size: 1rem;
+    }
+
+    .catch-cat-progress,
+    .catch-cat-timer {
+        justify-content: center;
+    }
+
+    .scene-description {
+        font-size: 1rem;
+    }
+
+    .catch-cat-complete-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .cat-container-right {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    .catch-cat-complete-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .catch-cat-complete-buttons button {
+        width: 100%;
+    }
 }
 
 /* Пасхалка */
@@ -1273,7 +1440,8 @@
 .final-signature {
     font-size: var(--font-size-xl);
     color: var(--color-pink);
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
     font-style: italic;
 }
 
