@@ -1,12 +1,12 @@
 :root {
     /* Цветовая палитра */
-    --color-bg: #FFF8F1;
-    --color-powder: #F8EAE4;
-    --color-pink: #D990A6;
-    --color-sage: #B8C8A9;
-    --color-lavender: #C7B8DF;
-    --color-text-primary: #514442;
-    --color-text-secondary: #8B7772;
+    --color-bg: #E8D4C4;
+    --color-powder: #D8C4B4;
+    --color-pink: #B85C78;
+    --color-sage: #7A9E5E;
+    --color-lavender: #8A7AB5;
+    --color-text-primary: #1A1412;
+    --color-text-secondary: #3A302C;
     --color-white: #FFFFFF;
 
     /* Motion timings */
@@ -34,9 +34,15 @@
     --radius-full: 9999px;
 
     /* Shadows */
-    --shadow-soft: 0 4px 12px rgba(81, 68, 66, 0.08);
-    --shadow-medium: 0 8px 24px rgba(81, 68, 66, 0.12);
-    --shadow-glow: 0 0 20px rgba(217, 144, 166, 0.3);
+    --shadow-soft: 0 4px 12px rgba(81, 68, 66, 0.15);
+    --shadow-medium: 0 8px 24px rgba(81, 68, 66, 0.2);
+    --shadow-glow: 0 0 20px rgba(184, 92, 120, 0.4);
+
+    /* Gradients */
+    --gradient-intro: linear-gradient(135deg, #E8D4C4 0%, #D8C4B4 50%, #C8B4A4 100%);
+    --gradient-hearts: linear-gradient(135deg, #E8D4C4 0%, #D8C4B4 50%, #8A7AB5 100%);
+    --gradient-gifts: linear-gradient(135deg, #E8D4C4 0%, #C8C8C8 50%, #D8C4B4 100%);
+    --gradient-final: linear-gradient(135deg, #E8D4C4 0%, #8A7AB5 50%, #B85C78 100%);
 
     /* Typography */
     --font-size-base: 16px;

@@ -34,7 +34,7 @@ const content = {
     petersburg: {
         title: "Куда пойдем?",
         subtitle: "",
-        description: "Выбери места для нашего романтического путешествия",
+        description: "Хотя все уже распланировали давно, ну ладно",
 
         // Места для посещения
         places: [
@@ -42,7 +42,7 @@ const content = {
                 id: 1,
                 name: "Город 812",
                 category: "food",
-                description: "Уютное кафе с атмосферой Петербурга",
+                description: "Уютное кафе",
                 url: "https://gorod812-cafe.ru/",
                 icon: "cafe"
             },
@@ -50,7 +50,7 @@ const content = {
                 id: 2,
                 name: "John Doe",
                 category: "food",
-                description: "Стильное заведение для особенных моментов",
+                description: "Стильное заведение",
                 url: "https://john-doe.ru/",
                 icon: "cocktail"
             },
@@ -58,7 +58,7 @@ const content = {
                 id: 3,
                 name: "Эрмитаж",
                 category: "culture",
-                description: "Один из величайших музеев мира",
+                description: "Ну надо сходить сто проц",
                 url: "https://www.hermitagemuseum.org/",
                 icon: "museum"
             },
@@ -66,7 +66,7 @@ const content = {
                 id: 4,
                 name: "Пуси Лебеди",
                 category: "food",
-                description: "Милые пирожные для сладких моментов",
+                description: "Милые пирожные",
                 url: "https://pusylebedi.ru/",
                 icon: "cake"
             },
@@ -93,6 +93,78 @@ const content = {
                 description: "Вино и вид на город с высоты",
                 url: "https://skywinebar.ru/",
                 icon: "wine"
+            },
+            {
+                id: 8,
+                name: "Jungle",
+                category: "food",
+                description: "Атмосферный ресторан с тропическим вайбомом",
+                url: "https://ko-restaurants.ru/r/jungle",
+                icon: "jungle"
+            },
+            {
+                id: 9,
+                name: "Лахта центр",
+                category: "culture",
+                description: "Москоу сити 2.0",
+                url: "https://lakhta.center/",
+                icon: "landmark"
+            },
+            {
+                id: 10,
+                name: "Исаакиевский собор",
+                category: "culture",
+                description: "Красивейший собор Санкт-Петербурга",
+                url: "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%B0%D0%B0%D0%BA%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80",
+                icon: "cathedral"
+            },
+            {
+                id: 11,
+                name: "Елагин остров",
+                category: "culture",
+                description: "Прекрасный парк для прогулок",
+                url: "https://elaginpark.org/",
+                icon: "park"
+            },
+            {
+                id: 12,
+                name: "Бары на Рубенштейна",
+                category: "food",
+                description: "Футбольчик",
+                url: "",
+                icon: "bar"
+            },
+            {
+                id: 13,
+                name: "Буше",
+                category: "food",
+                description: "Че-нить пожрать",
+                url: "https://bushe.ru/en",
+                icon: "cafe"
+            },
+            {
+                id: 14,
+                name: "Мазапарк",
+                category: "culture",
+                description: "Место для жестких тусовок с игровыми автоматами",
+                url: "https://mazapark.ru/",
+                icon: "ship"
+            },
+            {
+                id: 15,
+                name: "Прогулка на катере",
+                category: "culture",
+                description: "Романтическая поездка по каналам Санкт-Петербурга",
+                url: "",
+                icon: "ship"
+            },
+            {
+                id: 16,
+                name: "Мост поцелуев",
+                category: "culture",
+                description: "XOXOXO",
+                url: "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%86%D0%B5%D0%BB%D1%83%D0%B5%D0%B2_%D0%BC%D0%BE%D1%81%D1%82",
+                icon: "bridge"
             }
         ],
 
@@ -147,7 +219,7 @@ const content = {
         clearButton: "Очистить план",
         clearConfirm: "Ну как хош",
         personalNote: "Комментарий",
-        secretMessage: "Мой план — быть рядом с тобой ♡",
+        secretMessage: "Я так рад, что у нас с тобой получилось поехать в Питер. Полин, ты - мое счастье. Я готов разделить эту жизнь с тобой.",
         moveUp: "↑",
         moveDown: "↓",
         remove: "✕",

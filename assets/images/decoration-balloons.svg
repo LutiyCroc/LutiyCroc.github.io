@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" width="200" height="250">
+  <!-- Шарик 1 - розовый -->
+  <ellipse cx="50" cy="80" rx="30" ry="40" fill="#D990A6" opacity="0.6"/>
+  <ellipse cx="40" cy="70" rx="8" ry="12" fill="#F8EAE4" opacity="0.4"/>
+  <path d="M50,120 L50,160" stroke="#B8C8A9" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Шарик 2 - лавандовый -->
+  <ellipse cx="100" cy="60" rx="32" ry="42" fill="#C7B8DF" opacity="0.6"/>
+  <ellipse cx="90" cy="50" rx="10" ry="14" fill="#F8EAE4" opacity="0.4"/>
+  <path d="M100,102 L100,170" stroke="#B8C8A9" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Шарик 3 - шалфейный -->
+  <ellipse cx="150" cy="90" rx="28" ry="38" fill="#B8C8A9" opacity="0.6"/>
+  <ellipse cx="140" cy="80" rx="7" ry="11" fill="#F8EAE4" opacity="0.4"/>
+  <path d="M150,128 L150,150" stroke="#B8C8A9" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Маленький шарик 4 - золотой -->
+  <ellipse cx="70" cy="140" rx="20" ry="28" fill="#E9CC8A" opacity="0.5"/>
+  <ellipse cx="65" cy="133" rx="5" ry="8" fill="#F8EAE4" opacity="0.4"/>
+  <path d="M70,168 L70,200" stroke="#B8C8A9" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Маленький шарик 5 - пудровый -->
+  <ellipse cx="130" cy="150" rx="18" ry="25" fill="#F8EAE4" opacity="0.7"/>
+  <ellipse cx="125" cy="143" rx="4" ry="7" fill="#D990A6" opacity="0.3"/>
+  <path d="M130,175 L130,210" stroke="#B8C8A9" stroke-width="1.5" opacity="0.5"/>
+</svg>

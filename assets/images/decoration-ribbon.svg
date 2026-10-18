@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <!-- Основная лента -->
+  <path d="M10,50 Q50,30 100,50 Q150,70 190,50" 
+        stroke="#D990A6" stroke-width="8" fill="none" opacity="0.6" stroke-linecap="round"/>
+  
+  <!-- Бант слева -->
+  <ellipse cx="30" cy="50" rx="20" ry="12" fill="#C7B8DF" opacity="0.7"/>
+  <ellipse cx="15" cy="48" rx="15" ry="10" fill="#C7B8DF" opacity="0.6" transform="rotate(-30 15 48)"/>
+  <ellipse cx="45" cy="48" rx="15" ry="10" fill="#C7B8DF" opacity="0.6" transform="rotate(30 45 48)"/>
+  <circle cx="30" cy="50" r="6" fill="#D990A6" opacity="0.8"/>
+  
+  <!-- Бант справа -->
+  <ellipse cx="170" cy="50" rx="20" ry="12" fill="#B8C8A9" opacity="0.7"/>
+  <ellipse cx="155" cy="48" rx="15" ry="10" fill="#B8C8A9" opacity="0.6" transform="rotate(-30 155 48)"/>
+  <ellipse cx="185" cy="48" rx="15" ry="10" fill="#B8C8A9" opacity="0.6" transform="rotate(30 185 48)"/>
+  <circle cx="170" cy="50" r="6" fill="#D990A6" opacity="0.8"/>
+  
+  <!-- Центральный бантик -->
+  <ellipse cx="100" cy="50" rx="18" ry="10" fill="#F8EAE4" opacity="0.8"/>
+  <ellipse cx="85" cy="48" rx="14" ry="8" fill="#F8EAE4" opacity="0.7" transform="rotate(-25 85 48)"/>
+  <ellipse cx="115" cy="48" rx="14" ry="8" fill="#F8EAE4" opacity="0.7" transform="rotate(25 115 48)"/>
+  <circle cx="100" cy="50" r="5" fill="#E9CC8A" opacity="0.9"/>
+</svg>

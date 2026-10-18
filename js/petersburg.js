@@ -21,8 +21,6 @@ class PetersburgPlanner {
 
     init() {
         this.loadState();
-        // Временно очищаем состояние для тестирования
-        this.clearState();
         this.initModal();
         this.initTabs();
         this.initFilters();
@@ -79,6 +77,8 @@ class PetersburgPlanner {
         const modal = document.getElementById('petersburg-modal');
         modal.classList.remove('hidden');
         this.createOpenBurst();
+        this.buildItinerary();
+        this.renderRoute();
     }
 
     close() {
@@ -139,6 +139,11 @@ class PetersburgPlanner {
             content.classList.toggle('active', content.id === `tab-${tabName}`);
             content.classList.toggle('hidden', content.id !== `tab-${tabName}`);
         });
+
+        if (tabName === 'route') {
+            this.buildItinerary();
+            this.renderRoute();
+        }
 
         if (tabName === 'final') {
             this.buildItinerary();
@@ -250,7 +255,12 @@ class PetersburgPlanner {
             cake: '🧁',
             sushi: '🍣',
             bowl: '🍜',
-            wine: '🍷'
+            wine: '🍷',
+            jungle: '🌴',
+            landmark: '🏢',
+            cathedral: '⛪',
+            park: '🌳',
+            bar: '🍺'
         };
         const icon = icons[iconType] || '📍';
         return `<span style="font-size: 32px;">${icon}</span>`;
@@ -269,6 +279,7 @@ class PetersburgPlanner {
 
         this.buildItinerary();
         this.renderPlaces();
+        this.renderRoute(); // Обновляем маршрут при изменении выбора
         this.saveState();
     }
 
@@ -941,9 +952,14 @@ class PetersburgPlanner {
 
             const endTimeMinutes = startTimeMinutes + duration;
 
-            // Форматируем время
+            // Проверяем, если время выходит за рамки одного дня
+            if (endTimeMinutes >= 24 * 60 && !warning) {
+                warning = 'Это событие заканчивается на следующий день';
+            }
+
+            // Форматируем время (с корректным переходом через полночь)
             const formatTime = (minutes) => {
-                const h = Math.floor(minutes / 60);
+                const h = Math.floor(minutes / 60) % 24; // Модуль 24 для корректного 24-часового формата
                 const m = minutes % 60;
                 return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
             };
